@@ -28,6 +28,7 @@ class DenunciasTest extends TestCase
             'den_quantidade_pessoas' => '499'
         ]);
         $this->assertCount(1, Denuncia::all());
+        $response->assertRedirect(route('denuncia.index'));
     }
 
     public function testDenunciaStoreValidation()

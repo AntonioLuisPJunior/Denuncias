@@ -20,8 +20,8 @@ class DenunciaController extends Controller
 
     public function store(DenunciaRequest $request) 
     {  
-        $denuncia = Denuncia::create($request->all()); 
-        return redirect()->route('denuncia.show', ['denuncia' => $denuncia]);
+        Denuncia::create($request->all()); 
+        return redirect()->route('denuncia.index');
     }
 
     public function show(Denuncia $denuncia) 
