@@ -14,11 +14,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'DenunciaController@index')->name('denuncia.index');
 
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('/denuncia')->group(function () {
+    Route::get('/', 'DenunciaController@index')->name('denuncia');
     Route::get('/create', 'DenunciaController@create')->name('denuncia.create');
     Route::post('/store', 'DenunciaController@store')->name('denuncia.store');
     Route::get('/show/{denuncia}', 'DenunciaController@show')->name('denuncia.show');
